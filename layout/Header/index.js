@@ -63,7 +63,7 @@ const Header = (props) => {
         <div className={`header-wrapper${isMenuChange ? " menu-open" : ""}`}>
           <div className="header-left d-flex align-items-center">
             <div className="logo">
-              <a href={"/"}>{logoUrl}</a>
+              <Link href={"/"}>{logoUrl}</Link>
             </div>
             <nav className="mainmenunav d-lg-block ml--50">
               <Scrollspy
