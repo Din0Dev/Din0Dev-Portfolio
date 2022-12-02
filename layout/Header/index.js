@@ -73,8 +73,7 @@ const Header = (props) => {
                   "home",
                   "about",
                   "service",
-                  "portfolio",
-                  "blog",
+                  "project",
                   "contact",
                 ]}
                 currentClassName="is-current"
