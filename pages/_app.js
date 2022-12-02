@@ -12,7 +12,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "scss/styles.scss";
 
 Router.events.on("routeChangeStart", (url) => {
-  console.log(`Loading: ${url}`);
   NProgress.start();
 });
 Router.events.on("routeChangeComplete", () => NProgress.done());

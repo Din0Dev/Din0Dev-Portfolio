@@ -27,7 +27,6 @@ const Header = (props) => {
 
   //! State
   const [isMenuChange, setIsMenuChanged] = useState(false);
-
   //! Function
 
   //! Render
@@ -69,29 +68,43 @@ const Header = (props) => {
             <nav className="mainmenunav d-lg-block ml--50">
               <Scrollspy
                 className="mainmenu"
-                items={[
-                  "home",
-                  "about",
-                  "service",
-                  "project",
-                  "contact",
-                ]}
+                items={["home", "about", "service", "project", "contact"]}
                 currentClassName="is-current"
                 offset={-200}
               >
-                <li>
+                <li
+                  onClick={() => {
+                    setIsMenuChanged(false);
+                  }}
+                >
                   <Link href="#home">Home</Link>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    setIsMenuChanged(false);
+                  }}
+                >
                   <Link href="#about">About</Link>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    setIsMenuChanged(false);
+                  }}
+                >
                   <Link href="#service">Service</Link>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    setIsMenuChanged(false);
+                  }}
+                >
                   <Link href="#project">Projects</Link>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    setIsMenuChanged(false);
+                  }}
+                >
                   <Link href="#contact">Contact</Link>
                 </li>
               </Scrollspy>
