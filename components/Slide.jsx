@@ -5,7 +5,7 @@ import Particles from "react-particles-js";
 const SlideList = [
   {
     textPosition: "text-left",
-    category: "Welcome to my Portfilo",
+    category: "Welcome to my Portfolio",
   }
 ];
 
