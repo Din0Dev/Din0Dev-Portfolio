@@ -40,10 +40,11 @@ const Header = (props) => {
 
   //! State
   const [isMenuChange, setIsMenuChanged] = useState(false);
+  const [lang, setLang] = useState('en');
   //! Function
   const handleChangeLanguage = (language) => {
-    console.log("language", language);
     i18n.changeLanguage(language);
+    setLang(language)
   };
 
   //! Render
@@ -136,7 +137,7 @@ const Header = (props) => {
                     key={val.name}
                     onClick={() => handleChangeLanguage(val.name)}
                   >
-                    <img style={{ width: "30px" }} src={val.icon} />
+                    <img style={{ width: "30px", opacity: lang === val.name ? 1 : 0.5 }} src={val.icon} />
                   </li>
                 ))}
                 {SocialShare.map((val, i) => (
