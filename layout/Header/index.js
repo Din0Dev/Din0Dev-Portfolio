@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { FiX, FiMenu } from "react-icons/fi";
 import { SiSkype } from "react-icons/si";
@@ -14,6 +15,17 @@ const SocialShare = [
   },
 ];
 
+const Language = [
+  {
+    name: "en",
+    icon: "/assets/images/language/united-kingdom.svg",
+  },
+  {
+    name: "vi",
+    icon: "/assets/images/language/vietnam.svg",
+  },
+];
+
 let logoUrl = (
   <img
     style={{ width: "30px", opacity: 0.8 }}
@@ -24,10 +36,15 @@ let logoUrl = (
 
 const Header = (props) => {
   const { color = "color-black", logo = "symbol-dark" } = props;
+  const { t, i18n } = useTranslation();
 
   //! State
   const [isMenuChange, setIsMenuChanged] = useState(false);
   //! Function
+  const handleChangeLanguage = (language) => {
+    console.log("language", language);
+    i18n.changeLanguage(language);
+  };
 
   //! Render
   if (typeof window !== "undefined" || typeof document !== "undefined") {
@@ -77,35 +94,35 @@ const Header = (props) => {
                     setIsMenuChanged(false);
                   }}
                 >
-                  <Link href="#home">Home</Link>
+                  <Link href="#home">{t("common:home")}</Link>
                 </li>
                 <li
                   onClick={() => {
                     setIsMenuChanged(false);
                   }}
                 >
-                  <Link href="#about">About</Link>
+                  <Link href="#about">{t("common:about")}</Link>
                 </li>
                 <li
                   onClick={() => {
                     setIsMenuChanged(false);
                   }}
                 >
-                  <Link href="#service">Service</Link>
+                  <Link href="#service">{t("common:service")}</Link>
                 </li>
                 <li
                   onClick={() => {
                     setIsMenuChanged(false);
                   }}
                 >
-                  <Link href="#project">Projects</Link>
+                  <Link href="#project">{t("common:projects")}</Link>
                 </li>
                 <li
                   onClick={() => {
                     setIsMenuChanged(false);
                   }}
                 >
-                  <Link href="#contact">Contact</Link>
+                  <Link href="#contact">{t("common:contact")}</Link>
                 </li>
               </Scrollspy>
             </nav>
@@ -113,6 +130,15 @@ const Header = (props) => {
           <div className="header-right">
             <div className="social-share-inner">
               <ul className="social-share social-style--2 color-black d-flex justify-content-start liststyle">
+                <li className="color-theme">ENG</li>
+                {Language.map((val, i) => (
+                  <li
+                    key={val.name}
+                    onClick={() => handleChangeLanguage(val.name)}
+                  >
+                    <img style={{ width: "30px" }} src={val.icon} />
+                  </li>
+                ))}
                 {SocialShare.map((val, i) => (
                   <li key={i}>
                     <a href={`${val.link}`} target="_blank">

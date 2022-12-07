@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import ProjectsList from "./common/ProjectsList";
 
 const Projects = () => {
+  const { t } = useTranslation();
+
   return (
     <div id="project" className="fix">
       <div className="portfolio-area ptb--120 bg_color--1">
@@ -9,8 +12,8 @@ const Projects = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="section-title text-center service-style--3 mb--30 mb_sm--0">
-                  <h2 className="title">My Latest Projects</h2>
-                  <p>Here are a few projects I've worked on recently.</p>
+                  <h2 className="title">{t('project:title')}</h2>
+                  <p>{t('project:description')}</p>
                 </div>
               </div>
             </div>

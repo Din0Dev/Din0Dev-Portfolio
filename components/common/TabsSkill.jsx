@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import { useTranslation } from "react-i18next";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 const TabsSkill = (props) => {
+  const { t } = useTranslation();
+
   const {
     tabStyle,
-    tab1 = "Main skills",
-    tab2 = "Education & Certification",
+    tab1 = `${t('about:mainskills')}`,
+    tab2 = `${t('about:education')}`,
   } = props;
   //! Render
   return (
@@ -26,45 +29,43 @@ const TabsSkill = (props) => {
                     <ul>
                       <li>
                         <div>
-                          <b>Javascript, HTML, CSS</b>{" "}
-                          <span> - Development</span>
+                          <b>{t('about:javascriptTitle')}</b>
+                          <span> - {t('about:development')}</span>
                         </div>
                       </li>
                       <li>
                         <div>
-                          <b>React JS</b> <span> - Development</span>
+                          <b>{t('about:reactjsTitle')}</b> <span> - {t('about:development')}</span>
                         </div>
-                        Expert in ReactJS, Hook, Redux, Redux-Saga, NextJS,...
+                        {t('about:reactjs')}
                       </li>
                       <li>
                         <div>
-                          <b>Vue Js</b> <span> - Development</span>
+                          <b>{t('about:vuejsTitle')}</b> <span> - {t('about:development')}</span>
                         </div>
-                        Expert in VueJS,Nuxt, Vuex
+                        {t('about:vuejs')}
                       </li>
                       <li>
                         <div>
-                          <b>Wordpress</b> <span> - Development</span>
+                          <b>{t('about:wordpressTitle')}</b> <span> - {t('about:development')}</span>
                         </div>
-                        Expert build Website with Wordpress
+                        {t('about:wordpress')}
                       </li>
                       <li>
                         <div>
-                          <b>Figma, Adobe Photoshop®, Adobe Illustrator®</b>{" "}
-                          <span> - Designer</span>
+                          <b>{t('about:figmaTitle')}</b>{" "}
+                          <span> - {t('about:designer')}</span>
                         </div>
                       </li>
                       <li>
                         <div>
-                          <b>Other</b>
+                          <b>{t('about:other')}</b>
                         </div>
-                        Experience in SCSS, Styled Components, Animation,...{" "}
+                        {t('about:otherDesc1')}
                         <br></br>
-                        Responsible for work, problem solving, team-spirit, able
-                        to work under pressure, Hard worker, enthusiastic.
+                        {t('about:otherDesc2')}
                         <br></br>
-                        Quick to learn new technologies
-                      </li>
+                        {t('about:otherDesc3')}                      </li>
                     </ul>
                   </div>
                 </TabPanel>

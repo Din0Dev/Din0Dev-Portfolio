@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { useTranslation } from "react-i18next";
 
 let DesignLogo = (
   <svg width="48px" height="48px" fill="#008bff" viewBox="0 0 48 48">
@@ -51,35 +52,33 @@ let WebLogo = (
   </svg>
 );
 
-const serviceList = [
-  {
-    icon: DesignLogo,
-    title: "Design",
-    description:
-      "I value simple content structure, clean design patterns, and thoughtful interactions.",
-    things: "UI, Web, Apps, Photos, Logos",
-    tools: "Photoshop, Illustrator, Figma",
-  },
-  {
-    icon: WebLogo,
-    title: "Web Development",
-    description:
-      "I like to code things from scratch, and enjoy bringing ideas to life in the browser.",
-    things: "HTML, CSS, Javascript",
-    tools: "VSCode ,React, Vue, Redux, Codesandbox, Github",
-  },
-  {
-    icon: EngLogo,
-    title: "SEO",
-    description:
-      "I love researching for a website I've created a lot of people on all platforms",
-    things: "Building, fixing, Designing",
-    tools: "Google Search Console",
-  },
-];
-
 const ServicesList = (props) => {
+  const { t } = useTranslation();
   const { column, item } = props;
+
+  const serviceList = [
+    {
+      icon: DesignLogo,
+      title: `${t("services:designTitle")}`,
+      description: `${t("services:designDesc")}`,
+      things: `${t("services:designThings")}`,
+      tools: `${t("services:designTools")}`,
+    },
+    {
+      icon: WebLogo,
+      title: `${t("services:developmentTitle")}`,
+      description: `${t("services:developmentDesc")}`,
+      things: `${t("services:developmentThings")}`,
+      tools: `${t("services:developmentTools")}`,
+    },
+    {
+      icon: EngLogo,
+      title: `${t("services:seoTitle")}`,
+      description: `${t("services:seoDesc")}`,
+      things: `${t("services:seoThings")}`,
+      tools: `${t("services:seoTools")}`,
+    },
+  ];
 
   const serviceContent = serviceList.slice(0, item);
   return (
@@ -94,9 +93,9 @@ const ServicesList = (props) => {
                   <div className="content">
                     <h3 className="title">{val.title}</h3>
                     <p>{val.description}</p>
-                    <h4 className="title">Things I enjoy doing</h4>
+                    <h4 className="title">{t("services:things")}</h4>
                     <p>{val.things}</p>
-                    <h4 className="title">Tools I use</h4>
+                    <h4 className="title">{t("services:tools")}</h4>
                     <p>{val.tools}</p>
                   </div>
                 </center>

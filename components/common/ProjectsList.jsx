@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { useTranslation } from "react-i18next";
 
 const portfolioList = [
   {
@@ -34,16 +35,14 @@ const portfolioList = [
     image: "image-vinpearl",
     category: "ReactJS",
     title: "Vinpearl Booking",
-    description:
-      "Booking Tour, Flight, Hotel website",
+    description: "Booking Tour, Flight, Hotel website",
     link: "https://booking.vinpearl.com/",
   },
   {
     image: "image-t99",
     category: "ReactJS",
     title: "T99 LMS",
-    description:
-      "Manager user, customer, asset warehouse, etc.",
+    description: "Manager user, customer, asset warehouse, etc.",
     link: "https://t99.vn/",
   },
   {
@@ -63,6 +62,7 @@ const portfolioList = [
 ];
 
 const ProjectsList = (props) => {
+  const { t } = useTranslation();
   const { column, styevariation, item } = props;
   const list = portfolioList.slice(0, portfolioList.length);
 
@@ -92,7 +92,7 @@ const ProjectsList = (props) => {
                       rel="noreferrer"
                       target="_blank"
                     >
-                      View Details
+                      {t('button:view')}
                     </a>
                   )}
                 </div>

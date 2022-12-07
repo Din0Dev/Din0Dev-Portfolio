@@ -1,15 +1,18 @@
 import React from "react";
 import TextLoop from "react-text-loop";
 import Particles from "react-particles-js";
-
-const SlideList = [
-  {
-    textPosition: "text-left",
-    category: "Welcome to my Portfolio",
-  }
-];
+import { useTranslation } from "react-i18next";
 
 const Slide = () => {
+  const { t } = useTranslation();
+
+  const SlideList = [
+    {
+      textPosition: "text-left",
+      category: `${t("slide:welcome")}`,
+    },
+  ];
+
   return (
     <div id="home" className="fix">
       <div className="slider-wrapper">
@@ -85,13 +88,13 @@ const Slide = () => {
                   <div className={`inner ${value.textPosition}`}>
                     {value.category ? <span>{value.category}</span> : ""}
                     <h1 className="title">
-                      Hi, I’m Hong Hai (Din0Dev) <br />
+                      {t("slide:hello")} <br />
                       <TextLoop>
-                        <span> Web Developer.</span>
-                        <span> Designer.</span>
+                        <span> {t("slide:webdev")}</span>
+                        <span> {t("slide:designer")}</span>
                       </TextLoop>
                     </h1>
-                    <h2>Based in Viet Nam.</h2>
+                    <h2>{t("slide:basein")}</h2>
                   </div>
                 </div>
               </div>

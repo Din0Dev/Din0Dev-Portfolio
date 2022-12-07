@@ -1,51 +1,54 @@
+import { useTranslation } from "react-i18next";
 import TabsSkill from "./common/TabsSkill";
 
-let title = "About Me",
-  description =
-    "I've more 3 years experience in Web Development. I'm quietly confident, naturally curious, and perpetually working on improving my chops one problem at a time.";
 const About = () => {
-  const tabs = ["Main skills", "Education & Certification"];
+  const { t } = useTranslation();
+  
+  let title = `${t("about:title")}`,
+    description = `${t("about:description")}`;
+
+  const tabs = [`${t("about:mainskills")}`, `${t("about:education")}`];
   const tabsDescription = [
     {
       field: [
         {
-          name: "Javascript, HTML, CSS",
-          work: "Development",
-          description: "",
+          name: `${t("about:javascriptTitle")}`,
+          work: `${t("about:development")}`,
+          description: `${t("about:javascript")}`,
         },
         {
-          name: "React JS",
-          work: "Development",
-          description: "Expert in ReactJS, Hook, Redux, Redux-Saga, NextJS,...",
+          name: `${t("about:reactjsTitle")}`,
+          work: `${t("about:development")}`,
+          description: `${t("about:reactjs")}`,
         },
         {
-          name: "Vue Js",
-          work: "Development",
-          description: "Expert in VueJS,Nuxt, Vuex",
+          name: `${t("about:vuejsTitle")}`,
+          work: `${t("about:development")}`,
+          description: `${t("about:vuejs")}`,
         },
         {
-          name: "Wordpress",
-          work: "Development",
-          description: "Expert build Website with Wordpress",
+          name: `${t("about:wordpressTitle")}`,
+          work: `${t("about:development")}`,
+          description: `${t("about:wordpress")}`,
         },
         {
-          name: "Figma, Adobe Photoshop®, Adobe Illustrator®",
-          work: "Designer",
-          description: "",
+          name: `${t("about:figmaTitle")}`,
+          work: `${t("about:designer")}`,
+          description: `${t("about:figma")}`,
         },
       ],
     },
     {
       field: [
         {
-          name: "FPT Polytechnic School",
-          work: "Ha Noi, Viet Nam",
-          description: "Developing Website",
+          name: `${t("about:fpolyTitle")}`,
+          work: `${t("about:fpolyWork")}`,
+          description: `${t("about:fpoly")}`,
         },
         {
-          name: "Udemy, Inc.",
-          work: "International",
-          description: "Next.js & React",
+          name: `${t("about:udemyTitle")}`,
+          work: `${t("about:udemyWork")}`,
+          description: `${t("about:udemy")}`,
         },
       ],
     },

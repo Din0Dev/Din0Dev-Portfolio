@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+import { useTranslation } from "react-i18next";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -9,6 +10,8 @@ function Alert(props) {
 
 const ContactForm = (props) => {
   const { contactTitle } = props;
+  const { t } = useTranslation();
+
   //! State
   const [form, setForm] = useState({
     name: "",
@@ -64,7 +67,7 @@ const ContactForm = (props) => {
         );
       setForm({ name: "", email: "", subject: "", message: "" });
     } else {
-      alert("Please fill in the contact form before submitting");
+      alert(`${t('contact:required')}`);
     }
   };
   //! Render
@@ -76,8 +79,7 @@ const ContactForm = (props) => {
             <div className="section-title text-left mb--50">
               <h2 className="title">{contactTitle}</h2>
               <p className="description">
-                I am available for full time, part time and freelance work.
-                Connect with me via email:
+                {t("contact:description")}
                 <a href="mailto:honghai251.info@gmail.com">
                   honghai251.info@gmail.com
                 </a>
@@ -146,7 +148,7 @@ const ContactForm = (props) => {
                   id="mc-embedded-subscribe"
                   disabled={loading}
                 >
-                  {loading ? "Sending..." : "Submit"}
+                  {loading ? `${t('button:sending')}` : `${t('button:submit')}`}
                 </button>
               </form>
             </div>
@@ -155,7 +157,7 @@ const ContactForm = (props) => {
       </div>
       <Snackbar open={form.open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
-          Email sent!
+          {t('contact:notification')}
         </Alert>
       </Snackbar>
     </div>
