@@ -131,7 +131,6 @@ const Header = (props) => {
           <div className="header-right">
             <div className="social-share-inner">
               <ul className="social-share social-style--2 color-black d-flex justify-content-start liststyle">
-                <li className="color-theme">ENG</li>
                 {Language.map((val, i) => (
                   <li
                     key={val.name}
