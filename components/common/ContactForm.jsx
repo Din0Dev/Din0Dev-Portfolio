@@ -96,7 +96,7 @@ const ContactForm = (props) => {
                     onChange={(e) => {
                       handleChange(e);
                     }}
-                    placeholder="Your Name *"
+                    placeholder={t('contact:placeholderName')}
                   />
                 </label>
 
@@ -112,7 +112,7 @@ const ContactForm = (props) => {
                     onChange={(e) => {
                       handleChange(e);
                     }}
-                    placeholder="Your email *"
+                    placeholder={t('contact:placeholderEmail')}
                   />
                 </label>
 
@@ -125,7 +125,7 @@ const ContactForm = (props) => {
                     onChange={(e) => {
                       handleChange(e);
                     }}
-                    placeholder="Write a Subject"
+                    placeholder={t('contact:placeholderSubject')}
                   />
                 </label>
                 <label htmlFor="item04">
@@ -137,7 +137,7 @@ const ContactForm = (props) => {
                     onChange={(e) => {
                       handleChange(e);
                     }}
-                    placeholder="Your Message"
+                    placeholder={t('contact:placeholderMessage')}
                   />
                 </label>
                 <button
